@@ -1,0 +1,42 @@
+﻿@model DomainClasses.Models.DashboardUser
+
+
+@if (Model == null || Model.Favorite == true)
+{
+       
+    <div class="row">
+        <div class="col-lg-12 col-lg-offset-2">
+        </div>
+    </div>
+       
+}
+
+@if (Model != null && Model.Favorite == false)
+{    
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-lg-12 col-lg-offset-2">
+                <h5>The dashboard that you are viewing will only be displayed temporarilly, as you do not have it added as a favorite. To display this Dasboard permanelly,</h5>
+                @*<a href="@Url.Action("Add", "Dashboard", new { Id = Model.DashboardId })">add it as a favorite.</a>*@
+                <input type="submit" value="add it as a favorite." />
+
+            </div>
+        </div>
+    </div>
+}
+else
+{
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+
+                <br />
+                <br />
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <!-- /.row -->
+    </div>
+
+}

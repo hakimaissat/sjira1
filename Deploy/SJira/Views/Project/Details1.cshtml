@@ -1,0 +1,72 @@
+﻿
+@model MvcSJira.Models.ProjectModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Project</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Code)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Code)
+    </div>
+
+    @*<div class="display-label">
+         @Html.DisplayNameFor(model => model.Description)
+    </div>*@
+    @*<div class="display-field">
+        @Html.DisplayFor(model => model.Description)
+    </div>*@
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Lead)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Lead)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Category)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Category)
+    </div>
+
+    @*<div class="display-label">
+         @Html.DisplayNameFor(model => model.TimeOriginalIstimate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TimeOriginalIstimate)
+    </div>*@
+
+    @*<div class="display-label">
+         @Html.DisplayNameFor(model => model.ModifiedDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ModifiedDate)
+    </div>*@
+
+    @*<div class="display-label">
+         @Html.DisplayNameFor(model => model.IsDirty)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IsDirty)
+    </div>*@
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ProjectId }) |
+    @Html.ActionLink("Back", "Index")
+</p>

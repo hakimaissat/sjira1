@@ -1,0 +1,25 @@
+﻿@model IEnumerable<MvcSJira.Models.DashboardModel>
+@{
+    ViewBag.Title = "Home Page";
+    Layout = "~/Views/Dashboard/_Layout.cshtml";
+}
+@section featured {
+    <ul class="nav navbar-top-links navbar-right">
+        <li>
+            <button  type="button" class="btn btn-default" onclick="location.href='@Url.Action("Create", "Dashboard")'">Create new dashboard</button>
+        </li>
+        <li>
+            <button type="button" class="btn btn-default">Restore Defaults</button>
+        </li>
+    </ul>
+    <br />
+}
+@if (ViewBag.IsSearchAreaVisible == true)
+{
+    @Html.Partial("_SearchPartial")
+}
+@if (ViewBag.IsGridAreaVisible == true)
+{
+    @Html.Partial("_ListPartial")
+}
+

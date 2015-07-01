@@ -1,0 +1,179 @@
+﻿@model DomainClasses.Models.Issue
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Issue/_Layout.cshtml";
+}
+
+<h2>Create</h2>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="row">
+        <div class="col-xs-12 col-md-6 center-block">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Create Issue</h3>
+                </div>
+                <div class="panel-body">
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Code)
+
+
+                        @Html.EditorFor(model => model.Code)
+                        @Html.ValidationMessageFor(model => model.Code)
+
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Summary)
+
+
+                        @Html.EditorFor(model => model.Summary)
+                        @Html.ValidationMessageFor(model => model.Summary)
+
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Description)
+
+
+                        @Html.EditorFor(model => model.Description)
+                        @Html.ValidationMessageFor(model => model.Description)
+
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Environment)
+
+
+                        @Html.EditorFor(model => model.Environment)
+                        @Html.ValidationMessageFor(model => model.Environment)
+
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Attachement)
+
+
+                        @Html.EditorFor(model => model.Attachement)
+                        @Html.ValidationMessageFor(model => model.Attachement)
+
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Labels)
+
+
+                        @Html.EditorFor(model => model.Labels)
+                        @Html.ValidationMessageFor(model => model.Labels)
+
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.ProjectId, "Project")
+
+
+                        @Html.DropDownList("ProjectId", String.Empty)
+                        @Html.ValidationMessageFor(model => model.ProjectId)
+
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.IssuePriorityId, "Priority")
+
+                        @Html.DropDownList("IssuePriorityId", String.Empty)
+                        @Html.ValidationMessageFor(model => model.IssuePriorityId)
+
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.IssueTypeId, "Type")
+
+
+                        @Html.DropDownList("IssueTypeId", String.Empty)
+                        @Html.ValidationMessageFor(model => model.IssueTypeId)
+
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.IssueResolutionId, "Resolution")
+
+
+                        @Html.DropDownList("IssueResolutionId", String.Empty)
+                        @Html.ValidationMessageFor(model => model.IssueResolutionId)
+
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.TimeOriginalIstimate)
+
+
+                        @Html.EditorFor(model => model.TimeOriginalIstimate)
+                        @Html.ValidationMessageFor(model => model.TimeOriginalIstimate)
+
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.AssigneeId)
+
+
+                        @Html.EditorFor(model => model.AssigneeId)
+                        @Html.ValidationMessageFor(model => model.AssigneeId)
+
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Votes)
+
+
+                        @Html.EditorFor(model => model.Votes)
+                        @Html.ValidationMessageFor(model => model.Votes)
+
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Watches)
+
+
+                        @Html.EditorFor(model => model.Watches)
+                        @Html.ValidationMessageFor(model => model.Watches)
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Create" class="btn btn-default" />
+        </div>
+    </div>
+    <div>
+        @Html.ActionLink("List", "Index")
+    </div>
+}
+
+
+
+@section Scripts {
+     <script src="~/Scripts/jquery.inputmask.bundle.min.js"></script>
+     <script>
+         $(document).ready(function () {
+             // NOTE: Must use input type='text' and not 'email' 
+             //       in order for masking to work
+             $("#Email").inputmask("email");
+             $("#DateRange_Start").inputmask("date");
+             $("#DateRange_End").inputmask("date");
+             $("#PhoneNumber").inputmask("mask", { "mask": "(999) 999-9999" });
+             // NOTE: Must use autoUnmask to allow numerics to 
+             //       post back to MVC model
+             //       Must use input type='text' and not 'number' in 
+             //       order for masking to work
+             $("#Salary").inputmask("currency", { 'removeMaskOnSubmit': true });
+         });
+  </script>
+    @*@Scripts.Render("~/bundles/jqueryval")*@
+}

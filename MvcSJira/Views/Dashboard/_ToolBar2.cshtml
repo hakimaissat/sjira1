@@ -1,0 +1,32 @@
+﻿@model DomainClasses.Models.Dashboard
+<div>
+    <div class="row">
+        <div class="col-lg-12">
+            <h6>The dashboard that you are viewing will only be displayed temporarilly, as you do not have it added as a favorite. To display this Dasboard permanelly,</h6>
+            <a href="index.html">add it as a favorite.</a>
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-7">
+             <h2>@Html.DisplayFor(model => model.Name)</h2>
+           
+
+        </div>
+
+        <div class="col-lg-5">
+            <ul class="nav navbar-top-links navbar-right">
+                <li>
+                    <a href="index.html"><i class="fa fa-plus"></i> Add Gadget</a>
+                </li>
+                <li>
+                    <a href="index.html"><i class="fa fa-pencil"></i> Edit Layout</a>
+                </li>
+                <li>
+                    <a href="index.html"><i class="fa a-gear fa-cog"></i> Tools <i class="fa fa-caret-down"></i></a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+</div>

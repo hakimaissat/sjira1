@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title - My ASP.NET MVC Application</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    @Styles.Render("~/Content/themes/base/css")
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link href="~/Content/Simplex/bootstrap.min.css" rel="stylesheet" />
+    @*<link href="~/Content/Cerulean/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/Darkly/bootstrap.min.css" rel="stylesheet" />*@
+
+</head>
+<body>
+    <header class="container">
+        <div class="row ">
+            <section class="col-md-12">@Html.Action("Main", "Home")
+
+            </section>
+
+            @*<section id="login" class="col-md-4">
+                @Html.Partial("_LoginPartial")
+            </section>*@
+
+        </div>
+        <div class="row">
+            <div class="col-md-12">@Html.Action("Secondary", "Home") </div>
+        </div>
+
+
+    </header>
+    <div id="body" class="container ">
+        <section id="sidebar" class="col-md-3 col-sm-3">
+            @Html.Action("SideBar", "Home")
+
+
+
+      
+
+        </section>
+        <section id="main" class="col-md-9 col-sm-9">
+            @RenderSection("featured", required: false)
+            <section class="content-wrapper main-content clear-fix">
+                @RenderBody()
+            </section>
+        </section>
+
+
+    </div>
+    <footer class="container">
+        <div class="content-wrapper">
+            <div class="float-left">
+                <p>&copy; @DateTime.Now.Year - My ASP.NET MVC Application</p>
+            </div>
+        </div>
+    </footer>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+
+</body>
+</html>
+
+
+
+
+@*      <div class="row">
+            <div class="col-md-12">@Html.Action("ToolBarMenu", "Home", new { ToolBar = ViewData["ToolBar"] })  </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">@Html.Action("SideBarMenu", "Home", new { SideBar = ViewData["SideBar"] })  </div>
+            <div class="col-md-1">
+                <button class="btn" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="true">
+                    <<
+                </button>
+            </div>
+
+
+        </div>*@
+
+
+
+
+
+
+@*<div id="body">
+        @RenderSection("featured", required: false)
+        <div class="row">
+            <div class="col-md-12">@Html.Action("Menu", "Home", new { Menu = ViewData["Menu"],SideBar = ViewData["SideBar"], ToolBar = ViewData["ToolBar"]  }) </div>
+        </div>
+        <div class="row">
+            <div class="col-md-10 col-md-offset-2">@Html.Action("Menu", "Home", new { Menu = ViewData["Menu"], SideBar = ViewData["My Open Issues SideBar"] })  </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">@Html.Action("SideBarMenu", "Home", new { Menu = ViewData["Menu"],MenuManagerTitle = ViewData["My Open Issues ToolBar"]  })  </div>
+            <div class="col-md-1">
+                <button class="btn" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="true">
+                    <<
+                </button>
+            </div>
+
+            <div class="col-md-9">
+                <section class="content-wrapper main-content clear-fix">
+                    @RenderBody()
+                </section>
+            </div>
+        </div>
+
+
+    </div>*@

@@ -1,0 +1,26 @@
+﻿<#@ template language="VB" HostSpecific="True" #>
+<#@ output extension="vb" #>
+<#@ parameter type="System.String" name="ControllerName" #>
+<#@ parameter type="System.String" name="ControllerRootName" #>
+<#@ parameter type="System.String" name="AreaName" #>
+<#
+Dim routePrefix As String = String.Empty
+If Not String.IsNullOrEmpty(AreaName) Then
+    routePrefix = AreaName & "/"
+End If
+routePrefix = routePrefix & ControllerRootName
+#>
+Imports System.Web.Mvc
+
+<#
+If Not String.IsNullOrEmpty(AreaName) Then
+#>
+<RouteArea("<#= AreaName #>")>
+<#
+End If
+#>
+<RoutePrefix("<#= ControllerRootName #>")>
+<Route("{action}")>
+Public Class <#= ControllerName #>
+    Inherits Controller
+End Class

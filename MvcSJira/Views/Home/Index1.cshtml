@@ -1,0 +1,106 @@
+﻿@model IEnumerable<DomainClasses.Models.MenuItem>
+
+@{
+    ViewBag.Title = "Home Page";
+    Layout = "~/Views/Home/_Layout.cshtml";
+}
+<link href="../Content/pdsa-sidebar.css" media="all" rel="stylesheet" type="text/css">
+
+@*<nav class="navbar navbar-default navbar-static-top"
+     role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <a href="/Home/Index" class="navbar-brand">
+        Home
+      </a>
+    </div>
+    <ul class="nav navbar-nav">
+      @foreach (DomainClasses.Models.SJiraMenuItem item in Model.Menus)
+      {
+        <li>
+          <a href="@item.MenuAction">@item.Title</a>
+        </li>
+      }
+    </ul>
+  </div>
+</nav>*@
+
+@*<nav class="navbar navbar-default navbar-static-top"
+    role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <a href="/Home/Index" class="navbar-brand">Home
+            </a>
+        </div>
+        <ul class="nav navbar-nav">
+            @foreach (DomainClasses.Models.MenuItem item in Model)
+            {
+                <li>
+                    @if (item.Menus.Count > 0)
+                    {
+                        <a href="@item.MenuAction" class="dropdown-toggle" data-toggle="dropdown">
+                            @item.Title&nbsp;
+                        <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            @foreach (DomainClasses.Models.MenuItem subitem in item.Menus)
+                            {
+                                <li>
+                                    <a href="@subitem.MenuAction">@subitem.Title</a>
+                                </li>
+                            }
+                        </ul>
+                    }
+                    else
+                    {
+                        
+                        <a href="@item.MenuAction">@item.Title</a>
+                       
+                    }
+                </li>
+            }
+        </ul>
+    </div>
+</nav>
+*@
+
+@*<div class="container">
+  <div class="row">
+    <div class="headerArea">
+      Data Driven Sidebar with Submenus (Mock)
+    </div>
+  </div>
+  <nav class="pdsa-sn-wrapper">
+    <ul id="sideNavParent">
+      <li class="pdsa-sn-brand">
+        <a href="/Home/Index">Menus</a>
+      </li>
+      @foreach (DomainClasses.Models.MenuItem item in Model)
+      {
+        <li>
+          @if (item.Menus.Count > 0)
+          {
+            <a href="#"
+               data-toggle="collapse"
+               data-target="#@item.MenuAction">
+              @item.Title
+              <span class="caret"></span>
+            </a>
+            <ul id="@item.MenuAction" class="collapse" data-parent="#sideNavParent">
+              @foreach (DomainClasses.Models.MenuItem subitem in item.Menus)
+              {
+                <li>
+                  <a href="@subitem.MenuAction">@subitem.Title</a>
+                </li>
+              }
+            </ul>
+          }
+          else
+          {
+            <a href="@item.MenuAction">@item.Title</a>
+          }
+        </li>
+      }
+    </ul>
+  </nav>
+</div>*@

@@ -1,0 +1,140 @@
+﻿@model DomainClasses.Models.Sprint
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="row">
+        <div class="col-xs-12 col-md-6 center-block">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Create Sprint</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Name, "Sprint")
+
+                        @Html.EditorFor(model => model.Name)
+                        @Html.ValidationMessageFor(model => model.Name)
+
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.DateRange_Start, "Sprint Begin Date")
+                        @Html.TextBoxFor(model => model.DateRange_Start)
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.DateRange_End, "Sprint End Date")
+                        @Html.TextBoxFor(model => model.DateRange_End)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Create" class="btn btn-default" />
+        </div>
+    </div>
+    <div>
+        @Html.ActionLink("List", "Index")
+    </div>
+}
+
+@section scripts
+{
+     <script src="~/Scripts/jquery.inputmask.bundle.min.js"></script>
+     <script>
+         $(document).ready(function () {
+             // NOTE: Must use input type='text' and not 'email' 
+             //       in order for masking to work
+             $("#Email").inputmask("email");
+             $("#DateRange_Start").inputmask("date");
+             $("#DateRange_End").inputmask("date");
+             $("#PhoneNumber").inputmask("mask", { "mask": "(999) 999-9999" });
+             // NOTE: Must use autoUnmask to allow numerics to 
+             //       post back to MVC model
+             //       Must use input type='text' and not 'number' in 
+             //       order for masking to work
+             $("#Salary").inputmask("currency", { 'removeMaskOnSubmit': true });
+         });
+  </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('input[name="DateRange_Start"]').daterangepicker(
+              {
+                  format: 'MM/DD/YYYY',
+                  startDate: '12/01/2014',
+                  endDate: '12/15/2014'
+              },
+              function (start, end, label) {
+                  $("#DateRange_Start").val(start.format('MM/DD/YYYY'));
+                  $("#DateRange_End").val(end.format('MM/DD/YYYY'));
+              }
+            );
+        });
+    </script>
+}
+
+@*@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Sprint</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Name, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Name)
+                @Html.ValidationMessageFor(model => model.Name)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.DateRange_Start, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.DateRange_Start)
+                @Html.ValidationMessageFor(model => model.DateRange_Start)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.DateRange_End, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.DateRange_End)
+                @Html.ValidationMessageFor(model => model.DateRange_End)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ModifiedDate, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ModifiedDate)
+                @Html.ValidationMessageFor(model => model.ModifiedDate)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}*@

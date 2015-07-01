@@ -1,0 +1,74 @@
+﻿@model DomainClasses.Models.MenuItem
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>MenuItem</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ParentId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ParentId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DisplayOrder)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DisplayOrder)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MenuAction)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MenuAction)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MenuIcon)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MenuIcon)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MenuIconAfter)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MenuIconAfter)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MenuItemType.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MenuItemType.Name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MenuItemId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

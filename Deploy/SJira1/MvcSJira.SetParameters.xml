@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <setParameter name="IIS Web Application Name" value="Default Web Site/SJira1" />
+  <setParameter name="SolidJira1Context-Web.config Connection String" value="Data Source=AISSAT\SQL2012;Initial Catalog=SolidJira1;Integrated Security=True;MultipleActiveResultSets=True" />
+  <setParameter name="DataLayer.Context.ApplicationUserContext-Web.config Connection String" value="DataLayer.Context.ApplicationUserContext_ConnectionString" />
+  <setParameter name="DataLayer.Context.BaseContext`1-Web.config Connection String" value="DataLayer.Context.BaseContext`1_ConnectionString" />
+  <setParameter name="DataLayer.Context.DashboardContext-Web.config Connection String" value="DataLayer.Context.DashboardContext_ConnectionString" />
+  <setParameter name="DataLayer.Context.IssueContext-Web.config Connection String" value="DataLayer.Context.IssueContext_ConnectionString" />
+  <setParameter name="DataLayer.Context.MenuItemContext-Web.config Connection String" value="DataLayer.Context.MenuItemContext_ConnectionString" />
+  <setParameter name="DataLayer.Context.ProjectContext-Web.config Connection String" value="DataLayer.Context.ProjectContext_ConnectionString" />
+  <setParameter name="DataLayer.Context.SJiraContext-Web.config Connection String" value="DataLayer.Context.SJiraContext_ConnectionString" />
+  <setParameter name="DataLayer.Context.SprintContext-Web.config Connection String" value="DataLayer.Context.SprintContext_ConnectionString" />
+  <setParameter name="DataLayer.Context.WorkContext-Web.config Connection String" value="DataLayer.Context.WorkContext_ConnectionString" />
+  <setParameter name="MvcSJira.Models.MvcSJiraContext-Web.config Connection String" value="MvcSJira.Models.MvcSJiraContext_ConnectionString" />
+</parameters>

@@ -1,0 +1,14 @@
+﻿@model SJiraDomainClasses.Project
+
+
+<div class="project">
+    <h4>@Model.Name</h4>
+    <span>@Model.Code</span>
+    <p>@Model.TimeOriginalIstimate</p>
+    <span class="right">
+        @if(User.IsInRole("admin"))
+        {
+        @Html.ActionLink("Edit", "Edit", new { id = Model.ProjectId })
+        }
+    </span>
+</div>

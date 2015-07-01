@@ -1,0 +1,77 @@
+﻿@model DomainClasses.Models.Project
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Project/_Layout.cshtml";
+}
+
+
+
+<h2>Create</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="row">
+        <div class="col-xs-12 col-md-6 center-block">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Create Project</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Name)
+
+                      
+                            @Html.EditorFor(model => model.Name)
+                            @Html.ValidationMessageFor(model => model.Name)
+                        
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Code)
+
+                      
+                            @Html.EditorFor(model => model.Code)
+                            @Html.ValidationMessageFor(model => model.Code)
+                        </div>
+               
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.ProjectCategoryId, "Category")
+
+                       
+                            @Html.DropDownList("ProjectCategoryId", String.Empty)
+                            @Html.ValidationMessageFor(model => model.ProjectCategoryId)
+                        </div>
+                 
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.LeadId, "User")
+
+                       
+                            @Html.DropDownList("LeadId", String.Empty)
+                            @Html.ValidationMessageFor(model => model.LeadId)
+                      
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    
+       <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Create" class="btn btn-default" />
+        </div>
+    </div>
+    <div>
+        @Html.ActionLink("List", "Index")
+    </div>
+}
+
+@section Scripts {
+     <script src="~/Scripts/jquery.inputmask.bundle.min.js"></script>
+    @*  @Scripts.Render("~/bundles/jqueryval")*@
+}

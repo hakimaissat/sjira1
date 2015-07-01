@@ -1,0 +1,14 @@
+﻿@model DomainClasses.Models.Dashboard
+
+<div>
+    <div class="row">
+                                      
+            <div class="col-lg-3">              
+                @Html.Partial(Model.Dashboard_Gadgets.Select(g => g.Gadget).Skip(0).Take(1).First().MenuAction)
+            </div>        
+            <div class="col-lg-9">              
+                @Html.Partial(Model.Dashboard_Gadgets.Select(g => g.Gadget).Skip(1).Take(1).First().MenuAction)
+            </div>    
+       
+    </div>
+</div>
