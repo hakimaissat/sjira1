@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleSJira", "ConsoleSJira\ConsoleSJira.csproj", "{B7CB3F85-7E3F-49AD-9896-E9C615E45212}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NewFolder1", "NewFolder1", "{6BE5881F-4C89-4EBB-B7DB-217965A20620}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcSJira", "MvcSJira\MvcSJira.csproj", "{C24F7078-1BA8-4B03-8AAD-98DC41E904B8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SJiraCore", "CoreSJira\SJiraCore.csproj", "{EEC458EA-70A8-436B-8BBB-2580A240A924}"
