@@ -24,6 +24,7 @@ namespace ConsoleSJira
         //    //UpdateProjectCategory();
         //    //InsertProjectCategory_Project();
         //        //LazyLoading();
+           
             
         //}
         static void Main(string[] args)
